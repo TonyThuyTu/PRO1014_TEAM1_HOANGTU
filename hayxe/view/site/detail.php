@@ -65,7 +65,7 @@
               </tr>
               <tr>
                 <td>Số KM đã đi</td>
-                <td>'.$km.'</td>
+                <td>'.$km.' KM</td>
               </tr>
               <tr>
                 <td>Loại động cơ</td>

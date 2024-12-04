@@ -194,7 +194,35 @@
                 break;
 
             case 'updatesp':
-                include "sanpham/edit.php";
+                if (isset($_POST["capnhat_sp"]) && $_POST["capnhat_sp"]) {
+                    $id = $_POST["id_pro"];
+                    $car_brands = $_POST["car_brands"];
+                    $car_name = $_POST["car_name"];
+                    $car_price = $_POST["car_price"];
+                    $car_des = $_POST["car_des"];
+                    $car_model = $_POST["car_model"];
+                    $car_year = $_POST["car_year"];
+                    $car_quantity = $_POST["car_quantity"];
+                    $car_fuel = $_POST["car_fuel"];
+                    $car_color = $_POST["car_color"];
+                    $car_chair = $_POST["car_chair"];
+                    $gear = $_POST["gear"];
+                    $motor = $_POST["motor"];
+                    $km = $_POST["km"];
+                    $filename = $_FILES["hinh"]["name"];
+                    $target_dir = "../upload/";
+                    $target_file = $target_dir . basename($filename);
+                    if (move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file)) {
+                        //echo "File" . htmlspecialchars(basename($_FILES["hinh"]["name"])) . " đã được up load.";
+                    } else {
+                        //echo "Lỗi up load file.";
+                    }
+                    update_sp($car_brands, $car_name, $car_price, $car_des, $car_model, $car_year, $car_quantity, $car_fuel, $car_color, $car_chair, $filename, $motor, $gear, $km ,$id);
+                    $thongbao = "Sửa thành công";
+                }
+                $listdanhmuc = loadall_danhmuc();
+                $listsanpham = loadall_pro();
+                include "sanpham/list.php";
                 break;
 
             case 'xoasp':

@@ -22,17 +22,15 @@ if (is_file($hinh_anh_xe)) {
             <input type="text" name="id" placeholder = "Mã" disabled>
 
             <p>Hãng xe</p>
-            <select class="search-bar" name="car_brands">
-                <option value="0">Tất cả</option>
+            <select name="car_brands">
+                    <option value="0">Tất cả</option>
                     <?php
-                        foreach ($listdanhmuc as $dm)
-                            extract($dm); {
-                            if($id_brands==$dm) $s="selected"; else $s="";
-                            echo '<option value="'.$dm.'" '.$s.'>'.$brands.'</option>';
-                        }
+                    foreach ($listdanhmuc as $dm) {
+                        if($id_brands==$dm['id_brands']) $s="selected"; else $s="";
+                        echo '<option value="'.$dm['id_brands'].'"'.$s.'>'.$dm['brands'].'</option>';
+                    }
                     ?>
-                    <!-- <option value="">Toyota</option> -->
-            </select>
+                </select>
             
             <p>Tên sản phẩm</p>
             <input type="text" name="car_name" placeholder = "Nhập tên sản phẩm..." value = "<?=$name?>">
@@ -75,7 +73,7 @@ if (is_file($hinh_anh_xe)) {
             <?=$hinh?>
 
             <input class="submit" type="submit" name="capnhat_sp" value="Cập nhật">
-            <input type="hidden" name="id" value = "<?=$id_products?>">
+            <input type="hidden" name="id_pro" value = "<?php if(isset($id_products) && $id_products >0) echo $id_products;?>">
             <a class="delete-btn" href="index.php?pg=qlsanpham">Hủy</a>
 
         </form>

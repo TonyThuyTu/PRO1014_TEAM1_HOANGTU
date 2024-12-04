@@ -47,4 +47,14 @@ function loadall_sanpham_home()
     return $list_sp;
 }
 
+function update_sp($car_brands, $car_name, $car_price, $car_des, $car_model, $car_year, $car_quantity, $car_fuel, $car_color, $car_chair, $filename, $motor, $gear, $km, $id)
+{
+    if ($filename !="") {
+        $sql = " UPDATE car_products SET id_brands='$car_brands',name='$car_name',price='$car_price',img='$filename' , description='$car_des', model='$car_model', quantity='$car_quantity', year='$car_year', fuel='$car_fuel', color='$car_color', chair_num='$car_chair', km='$km', motor = '$motor', gear='$gear' WHERE id_products = ".$id;
+    } else {
+        $sql = " UPDATE car_products SET id_brands='$car_brands',name='$car_name',price='$car_price', description='$car_des', model='$car_model', quantity='$car_quantity', year='$car_year', fuel='$car_fuel', color='$car_color', chair_num='$car_chair', km='$km', motor = '$motor', gear='$gear' WHERE id_products = ".$id;
+    }
+    pdo_execute($sql);
+}
+
 ?>
