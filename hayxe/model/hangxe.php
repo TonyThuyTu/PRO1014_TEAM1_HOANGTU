@@ -13,6 +13,11 @@ function loadall_danhmuc()
     return $list_dm;
 }
 
+function load_ten_dm($id)
+{
+    
+}
+
 function update_dm($id, $tenloai)
 {
     $sql = " UPDATE car_brands SET brands='$tenloai' WHERE id_brands = '$id' ";

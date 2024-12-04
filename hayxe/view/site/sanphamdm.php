@@ -2,7 +2,7 @@
 <section class="body">
     
     <div class="sell-title">
-        <h1>Tất cả các dòng xe</h1>
+        <h1>Tất cả các dòng xe </h1>
     </div>
     <hr>
 
@@ -53,20 +53,12 @@
                             <?php
                             foreach ($dmnew as $dm) {
                                 extract($dm);
-                                $linkdm = "index.php?pg=sanpham&iddm=" . $id_brand;
+                                $linkdm = "index.php?pg=sanphamdm&iddm=" . $id_brand;
                                 echo '<li>
                                         <a href="'.$linkdm.'">'.$brands.'</a>
                                     </li>';
                             }
-                            // <li>
-                            //     <a href="#">TOYOTA</a>
-                            // </li>
-
-
-
-                            // <!-- <li>
-                            //     <a href="#">TOYOTA</a>
-                            // </li> -->
+                            
                             ?>
                         </ul>
                     </div>

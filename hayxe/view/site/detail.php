@@ -11,7 +11,7 @@
     
           <div class="product-info">
             <h1>'.$name.'</h1>
-            <p class="views">'.$quantity.' lượt xem</p>
+            <p class="views"> Số lượng: '.$quantity.'</p>
             <p class="price">Giá từ: <span>'.$price.' VNĐ</span></p>
             <p>'.$description.'</p>
             <div class="buttons">

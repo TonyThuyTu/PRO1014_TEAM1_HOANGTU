@@ -20,6 +20,11 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")){
             include 'view/site/sell.php';
             break;
         
+        case 'sanphamdm':
+            
+            include 'view/site/sanphamdm.php'
+            break;
+        
         case 'detail':
             if (isset($_GET["idsp"]) && ($_GET["idsp"] > 0)) {
                 $id = $_GET['idsp'];
