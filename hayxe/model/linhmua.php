@@ -24,7 +24,7 @@ function get_status($n)
     switch ($n) {
 
         case '1':
-            $tt = "Đang xủ lý";
+            $tt = "Đang xử lý"; 
             break;
 
         case '2':
@@ -36,7 +36,7 @@ function get_status($n)
             break;
         
         default:
-            $tt = "Đang xủ lý";
+            $tt = "Đang xử lý";
             break;
     }
     return $tt;

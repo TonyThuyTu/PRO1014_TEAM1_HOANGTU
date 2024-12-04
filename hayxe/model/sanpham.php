@@ -20,6 +20,13 @@ function loadall_sanpham($kyw, $iddm)
     return $list_sp;
 }
 
+function loadall_pro()
+{
+    $sql = "SELECT * FROM car_products";
+    $list_pro = pdo_query($sql);
+    return $list_pro;
+}
+
 function  delete_sanpham($id)
 {
     $sql = " DELETE FROM car_products WHERE id_products = " . $id;

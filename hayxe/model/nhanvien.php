@@ -32,7 +32,7 @@ function loadone_nhanvien($id)
     return $nv;
 }
 
-function login_nhanvien($name, $pass)
+function login_admin($name, $pass)
 {
     $sql = "SELECT * FROM employee WHERE given_name='$name' AND pass ='$pass'";
     $sp = pdo_query_one($sql);

@@ -16,7 +16,7 @@
                     extract($_SESSION["user"]);
                 ?>
 
-                <span>Welcome, </span>
+                <span>Welcome,</span>
                 <button><a href="index.php?pg=out">Thoát</a></button>
        
         </div>

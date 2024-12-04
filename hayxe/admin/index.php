@@ -1,5 +1,7 @@
 <?php
     session_start();
+   
+    
     include "../model/pdo.php";
     include "../model/taikhoan.php";
     include "../model/hangxe.php";
@@ -18,7 +20,14 @@
                 break;
             
             case 'status':
-                
+                if (isset($_POST["ok"]) && $_POST["ok"]){
+                    
+                    
+
+
+                    $id = $_POST["id_buy"];
+                    update_status($id, $status);
+                }
                 $listbook = loadall_book();
                 include "lich/lichmua/list.php";
                 break;
@@ -185,7 +194,6 @@
                 break;
 
             case 'updatesp':
-                
                 include "sanpham/edit.php";
                 break;
 
@@ -193,26 +201,13 @@
                 if (isset($_GET["id"]) && $_GET["id"] > 0) {
                     delete_sanpham($_GET["id"]);
                 }
-                $listsanpham = loadall_sanpham();
+                $listsanpham = loadall_pro();
                 include "sanpham/list.php";
                 break;
             
             // Đây là khu vực đăng nhập admin và nhân viên
             
-            case 'admin':
-                if (isset($_POST["login"]) && $_POST["login"]) {
-                    $name = $_POST["name"];
-                    $pass = $_POST["pass"];
-                    $checkuser = login_nhanvien($name, $pass);
-                    if (is_array($checkuser)) {
-                        $_SESSION["user"] = $checkuser;
-                        header("location: index.php");
-                    } else {
-                        $thongbao = "Tài khoản không tồn tại, vui lòng kiểm tra hoặc đăng ký !";
-                    }
-                }
-                include 'view/home.php';
-                break;
+            
 
             case 'out':
                 session_unset();

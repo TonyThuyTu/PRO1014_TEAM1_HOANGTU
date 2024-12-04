@@ -85,16 +85,16 @@ span.psw {
 <form action="index.php?pg=admin" method="post">
  
   <div class="container">
-    <label for="uname"><b>name</b></label>
-    <input type="text" placeholder="Enter Name" name="name" required>
+    <label><b>Name</b></label>
+    <input type="text" placeholder="Enter Name" name="name">
 
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="pass" required>
+    <label><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="pass">
         
-    <button type="submit" name = "login">Login</button>
+    <button type="submit" name = "login" >Login</button>
   </div>
 </form>
-<?php
+        <?php
             if(isset($thongbao) &&$thongbao!=""){
                 echo $thongbao;
             }

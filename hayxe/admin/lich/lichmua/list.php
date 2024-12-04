@@ -19,12 +19,13 @@
                     <th>Giờ mua</th>
                     <th>Người mua</th>
                     <th>Số điện thoại</th>
-                    <th>Tên xe</th>
+                    
                    
                     <th>Trạng thái</th>
                     <th></th>
                 </tr>
             </thead>
+
             <?php
 
             foreach ($listbook as $book) {
@@ -40,7 +41,7 @@
                     <td>'.$book_time.'</td>
                     <td>'.$name.'</td>
                     <td>'.$phone.'</td>
-                    <td>Toyota</td>
+               
                   
                     <td>'.$stt.'</td>
                     <td>
@@ -51,6 +52,7 @@
                                     <option value="3" ' . ($book['status'] == 3 ? 'selected' : '') . '>Đã Hủy</option>
                                 </select>
                                  <input type="submit" class = "edit-btn" name = "ok" value = "Xác Nhận">
+                             <input type="hidden" name="id_buy" value="'.$id_buy.'">
                             </form>
                     </td>
                     </tr>';
@@ -81,7 +83,7 @@
                     <th>Giờ mua</th>
                     <th>Người mua</th>
                     <th>Số điện thoại</th>
-                    <th>Tên xe</th>
+               
                   
                     <th>Trạng thái</th>
                     <th></th>
