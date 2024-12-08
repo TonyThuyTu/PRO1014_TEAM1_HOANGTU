@@ -152,7 +152,7 @@ nav ul li a:hover::after{
     border-bottom: solid 1px black;
     list-style: none;
     padding: 5px;
-    
+    margin-bottom: 10px;
 }
 
 .sell-brands-name ul li a{

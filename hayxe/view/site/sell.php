@@ -14,13 +14,8 @@
                 foreach ($listall as $dssp) {
                     extract($dssp);
                     $linksp = "index.php?pg=detail&idsp=" . $id_products;
-                    if (($i == 2) || ($i == 5) || ($i == 8)) {
-                        $mr = "";
-                    } else {
-                        $mr = "mr";
-                    }
                     $hinh = $img_path . $img;
-                    echo '<div class="box '.$mr.'">
+                    echo '<div class="box">
                             <a href="'.$linksp.'"><img src="'.$hinh.'" width="100%"></a>
                             <p><a href="'.$linksp.'">'.$name.'</a></p>
                             <p>'.$price.' VNĐ</p>
@@ -46,21 +41,23 @@
             <div class="row mb">
                 <div class="sell-brands">
                     <div class="sell-brands-title">
-                        <p>Hãng Xe</p>
+                        <p>Các dòng xe</p>
                     </div>
                     <div class="sell-brands-name">
                         <ul>
-                            <?php
+                        <?php
                             foreach ($dmnew as $dm) {
                                 extract($dm);
-                                $linkdm = "index.php?pg=sanpham&iddm=" . $id_brands;
+                                $linkdm = "index.php?pg=sanpham&id=" . $id_brands;
                                 echo '<li>
                                         <a href="'.$linkdm.'">'.$brands.'</a>
                                     </li>';
                             }
+                            
                             ?>
                         </ul>
                     </div>
+                    <img src="./img/car.jpg" width = "100%">
                 </div>
             </div>
         </div>

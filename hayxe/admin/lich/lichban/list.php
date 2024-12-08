@@ -2,7 +2,7 @@
 
     <!-- Main Content -->
     <main class="main-content">
-        <h1>Quản lý lịch mua</h1>
+        <h1>Quản lý lịch bán</h1>
         
         <!-- Thanh tìm kiếm -->
         <div class="search-bar">

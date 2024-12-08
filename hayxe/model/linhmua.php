@@ -8,7 +8,7 @@ function insert_book($time, $date, $name, $phone)
 
 function loadall_book()
 {
-    $sql = "SELECT * FROM booking_buy";
+    $sql = "SELECT * FROM booking_buy ORDER BY id_buy DESC";
     $list_book = pdo_query($sql);
     return $list_book;
 }

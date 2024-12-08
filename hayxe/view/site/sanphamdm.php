@@ -2,7 +2,7 @@
 <section class="body">
     
     <div class="sell-title">
-        <h1>Các dòng xe </h1>
+        <h1>Tất cả dòng xe</h1>
     </div>
     <hr>
 
@@ -11,10 +11,10 @@
         <?php
                 $i = 0;
 
-                foreach ($list as $dssp) {
-                    extract($dssp);
+                foreach ($dssp as $sp) {
+                    extract($sp);
                     $linksp = "index.php?pg=detail&idsp=" . $id_products;
-                    if (($i == 2) || ($i == 5) || ($i == 8) || ($i == 11)) {
+                    if (($i == 2) || ($i == 5) || ($i == 8)) {
                         $mr = "";
                     } else {
                         $mr = "mr";
@@ -46,14 +46,14 @@
             <div class="row mb">
                 <div class="sell-brands">
                     <div class="sell-brands-title">
-                        <p>Hãng Xe</p>
+                        <p>Các dòng xe</p>
                     </div>
                     <div class="sell-brands-name">
                         <ul>
                             <?php
                             foreach ($dmnew as $dm) {
                                 extract($dm);
-                                $linkdm = "index.php?pg=sanphamdm&iddm=" . $id_brands;
+                                $linkdm = "index.php?pg=sanpham&id=" . $id_brands;
                                 echo '<li>
                                         <a href="'.$linkdm.'">'.$brands.'</a>
                                     </li>';
@@ -62,6 +62,7 @@
                             ?>
                         </ul>
                     </div>
+                    <img src="./img/car.jpg" width = "100%">
                 </div>
             </div>
         </div>

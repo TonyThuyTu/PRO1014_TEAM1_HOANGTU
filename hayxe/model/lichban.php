@@ -8,7 +8,7 @@ function insert_sellcar($name, $model, $km, $cus, $phone, $date, $time, $filenam
 
 function loadall_sell()
 {
-    $sql = "SELECT * FROM booking_sell";
+    $sql = "SELECT * FROM booking_sell ORDER BY id_sell DESC ";
     $list_sell = pdo_query($sql);
     return $list_sell;
 }

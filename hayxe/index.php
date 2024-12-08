@@ -20,11 +20,14 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")){
             include 'view/site/sell.php';
             break;
         
-        case 'sanphamdm':
-            if (isset($_GET["iddm"]) && ($_GET["iddm"] > 0)) {
-                $iddm = $_GET['iddm'];
-            $list = loadall_sanpham("", $iddm);
-            include 'view/site/sanphamdm.php';
+        case 'sanpham':
+            if (isset($_GET["id"]) && ($_GET["id"] > 0)) {
+                $iddm = $_GET['id'];
+                $dssp = loadall_sanpham("", $iddm);
+                include 'view/site/sanphamdm.php';
+            }
+            else{
+                include 'view/home.php';
             }
             break;
         

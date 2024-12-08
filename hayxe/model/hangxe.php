@@ -13,6 +13,7 @@ function loadall_danhmuc()
     return $list_dm;
 }
 
+
 function update_dm($id, $tenloai)
 {
     $sql = " UPDATE car_brands SET brands='$tenloai' WHERE id_brands = '$id' ";
@@ -31,5 +32,7 @@ function loadone_danhmuc($id)
     $dm = pdo_query_one($sql);
     return $dm;
 }
+
+
 
 ?>
