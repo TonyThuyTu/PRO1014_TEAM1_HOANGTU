@@ -53,20 +53,11 @@
                             <?php
                             foreach ($dmnew as $dm) {
                                 extract($dm);
-                                $linkdm = "index.php?pg=sanpham&iddm=" . $id_brand;
+                                $linkdm = "index.php?pg=sanpham&iddm=" . $id_brands;
                                 echo '<li>
                                         <a href="'.$linkdm.'">'.$brands.'</a>
                                     </li>';
                             }
-                            // <li>
-                            //     <a href="#">TOYOTA</a>
-                            // </li>
-
-
-
-                            // <!-- <li>
-                            //     <a href="#">TOYOTA</a>
-                            // </li> -->
                             ?>
                         </ul>
                     </div>

@@ -8,6 +8,7 @@
     include "../model/nhanvien.php";
     include "../model/sanpham.php";
     include "../model/linhmua.php";
+    include "../model/lichban.php";
     include "view/header.php";
 
     if(isset($_GET['pg']) && ($_GET['pg'] != "")){
@@ -19,12 +20,10 @@
                 include "lich/lichmua/list.php";
                 break;
             
+            
             case 'status':
                 if (isset($_POST["ok"]) && $_POST["ok"]){
                     
-                    
-
-
                     $id = $_POST["id_buy"];
                     update_status($id, $status);
                 }
@@ -40,8 +39,17 @@
                 $listbook = loadall_book();
                 include "lich/lichmua/list.php";
                 break;
+            
+            case 'xoasell':
+                if (isset($_GET["id"]) && $_GET["id"] > 0) {
+                    delete_sell($_GET["id"]);
+                }
+                $$listsell = loadall_sell();
+                include "lich/lichban/list.php";
+                break;
 
             case 'qllichban':
+                $listsell = loadall_sell();
                 include "lich/lichban/list.php";
                 break;
             // đây là khu vực khách hàng

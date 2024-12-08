@@ -2,7 +2,7 @@
 <section class="body">
     
     <div class="sell-title">
-        <h1>Tất cả các dòng xe </h1>
+        <h1>Các dòng xe </h1>
     </div>
     <hr>
 
@@ -11,10 +11,10 @@
         <?php
                 $i = 0;
 
-                foreach ($listall as $dssp) {
+                foreach ($list as $dssp) {
                     extract($dssp);
                     $linksp = "index.php?pg=detail&idsp=" . $id_products;
-                    if (($i == 2) || ($i == 5) || ($i == 8)) {
+                    if (($i == 2) || ($i == 5) || ($i == 8) || ($i == 11)) {
                         $mr = "";
                     } else {
                         $mr = "mr";
@@ -53,7 +53,7 @@
                             <?php
                             foreach ($dmnew as $dm) {
                                 extract($dm);
-                                $linkdm = "index.php?pg=sanphamdm&iddm=" . $id_brand;
+                                $linkdm = "index.php?pg=sanphamdm&iddm=" . $id_brands;
                                 echo '<li>
                                         <a href="'.$linkdm.'">'.$brands.'</a>
                                     </li>';

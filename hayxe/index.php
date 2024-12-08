@@ -21,8 +21,11 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")){
             break;
         
         case 'sanphamdm':
-            
-            include 'view/site/sanphamdm.php'
+            if (isset($_GET["iddm"]) && ($_GET["iddm"] > 0)) {
+                $iddm = $_GET['iddm'];
+            $list = loadall_sanpham("", $iddm);
+            include 'view/site/sanphamdm.php';
+            }
             break;
         
         case 'detail':
@@ -37,7 +40,7 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")){
             break;
         
         case 'sell':
-            if (isset($_POST["sell_car"]) && $_POST["sell_car"]) {
+            if (isset($_POST["sellcar"]) && $_POST["sellcar"]) {
                 $name = $_POST["name"];
                 $phone = $_POST["phone"];
                 $date = $_POST["date"];
@@ -45,15 +48,15 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")){
                 $model = $_POST["model"];
                 $km = $_POST["km"];
                 $cus = $_POST["cus"];
-                $file = $_FILES["file"]["name"];
-                $target_dir = "../upload/";
-                $target_file = $target_dir . basename($file);
-                if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
+                $filename = $_FILES["hinhxe"]["name"];
+                $target_dir = "upload/";
+                $target_file = $target_dir . basename($filename);
+                if (move_uploaded_file($_FILES["hinhxe"]["tmp_name"], $target_file)) {
                     //echo "File" . htmlspecialchars(basename($_FILES["hinh"]["name"])) . " đã được up load.";
                 } else {
                     //echo "Lỗi up load file.";
                 }
-                insert_sellcar($name, $model, $km, $cus, $phone, $date, $time, $file);
+                insert_sellcar($name, $model, $km, $cus, $phone, $date, $time, $filename);
             }
             include 'view/site/sellcar.php';
             break;     

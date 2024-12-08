@@ -13,11 +13,12 @@ function loadall_book()
     return $list_book;
 }
 
-function delete_book($id)
+function  delete_book($id)
 {
-    $sql = " DELETE FROM booking_buy WHERE id_buy = " . $id;
+    $sql = " DELETE FROM car_products WHERE id_products = " . $id;
     pdo_execute($sql);
 }
+
 
 function get_status($n)
 {

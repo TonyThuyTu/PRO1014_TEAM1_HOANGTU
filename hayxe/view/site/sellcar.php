@@ -22,7 +22,7 @@
                     <div class="form-grid">
                     <div class="form-group">
                             <label>Ảnh</label>
-                            <input type="file" name = "file">
+                            <input type="file" name = "hinhxe">
                         </div>
                         <div class="form-group">
                             <label>Tên xe</label>
@@ -54,7 +54,7 @@
                         </div>
                     
                     </div>
-                    <button type="submit" name = "sell_car" class="submit-btn">Gửi</button>
+                    <input type="submit" id="book" class = "submit-btn" name = "sellcar" value = "Gữi">
                 </form>
 
             <?php
