@@ -10,12 +10,16 @@
         <div class="sell-left">
         <?php
                 $i = 0;
-
+                if (($i == 2) || ($i == 5) || ($i == 8)) {
+                    $mr = "";
+                } else {
+                    $mr = "mr";
+                }
                 foreach ($listall as $dssp) {
                     extract($dssp);
                     $linksp = "index.php?pg=detail&idsp=" . $id_products;
                     $hinh = $img_path . $img;
-                    echo '<div class="box">
+                    echo '<div class="box ' . $mr . ' ">
                             <a href="'.$linksp.'"><img src="'.$hinh.'" width="100%"></a>
                             <p><a href="'.$linksp.'">'.$name.'</a></p>
                             <p>'.$price.' VNĐ</p>

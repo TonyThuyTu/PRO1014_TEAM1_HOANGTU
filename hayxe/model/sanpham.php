@@ -42,7 +42,7 @@ function loadone_sanpham($id)
 
 function loadall_sanpham_home()
 {
-    $sql = "SELECT * FROM car_products ORDER BY id_products DESC";
+    $sql = "SELECT * FROM car_products";
     $list_sp = pdo_query($sql);
     return $list_sp;
 }
