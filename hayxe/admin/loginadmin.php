@@ -66,27 +66,17 @@ span.psw {
   padding-top: 16px;
 }
 
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-  span.psw {
-     display: block;
-     float: none;
-  }
-  .cancelbtn {
-     width: 100%;
-  }
-}
 </style>
 </head>
 <body>
 
 <h2>Login Admin</h2>
 
-<form action="index.php?pg=admin" method="post">
+<form action="index.php?pg=loginadmin" method="post">
  
   <div class="container">
-    <label><b>Name</b></label>
-    <input type="text" placeholder="Enter Name" name="name">
+    <label><b>Email</b></label>
+    <input type="text" placeholder="Enter email" name="email">
 
     <label><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="pass">

@@ -1,7 +1,6 @@
 <?php
-    session_start();
-   
-    
+ 
+ 
     include "../model/pdo.php";
     include "../model/taikhoan.php";
     include "../model/hangxe.php";
@@ -243,7 +242,21 @@
             
             // Đây là khu vực đăng nhập admin và nhân viên
             
-            
+            case 'loginadmin':
+                if (isset($_POST["login"]) && $_POST["login"]) {
+                    $name = $_POST["email"];
+                    $pass = $_POST["pass"];
+                    $checkadmin = login_admin($email, $pass);
+                    if (is_array($checkadmin)) {
+                        $_SESSION["user"] = $checkadmin;
+                        header("location:index.php");
+                    } else {
+                        $thongbao = "Tài khoản bị lỗi xin kiểm tra lại tên đăng nhập và mật khẩu !";
+                    }
+                }
+                include 'index.php';
+                break;
+
 
             case 'out':
                 session_unset();
